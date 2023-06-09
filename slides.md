@@ -5,6 +5,10 @@ theme: apple-basic
 # like them? see https://unsplash.com/collections/94734566/slidev
 # https://sli.dev/custom/highlighters.html
 highlighter: shiki
+title: 'Tugas Besar Machine Learning'
+titleTemplate: '%s - XCOD33'
+download: true
+favicon: 'https://res.cloudinary.com/xcod33/image/upload/v1681807255/logo_xcod33_c1nw5n.png'
 transition: slide-left
 layout: intro
 colorSchema: 'dark'
@@ -13,6 +17,11 @@ defaults:
 ---
 # Home Credit Indonesia Default Risk
 Evaluasi Kelayakan Kredit Applicant
+---
+layout: center
+---
+# Akses Konten Presentasi
+<img src="https://chart.googleapis.com/chart?cht=qr&chs=400x400&chl=https://tubes-ml.ricoaditya.my.id/" width="400" class="mx-auto">
 ---
 layout: center
 transition: slide-left

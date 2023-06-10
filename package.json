@@ -16,6 +16,9 @@
     "colorSchema": "light"
   },
   "devDependencies": {
+    "@iconify-json/ic": "^1.1.13",
+    "@iconify-json/line-md": "^1.1.25",
+    "@iconify-json/mdi": "^1.1.52",
     "playwright-chromium": "^1.35.0"
   }
 }

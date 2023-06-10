@@ -26,7 +26,7 @@ layout: center
 layout: center
 transition: slide-left
 ---
-<h2>Anggota Kelompok</h2>
+<h2><line-md-reddit-loop /> Anggota Kelompok</h2>
 <div class="mt-6 grid grid-cols-3 gap-4">
   <div class="col-span-1">
     <div class="bg-white shadow-lg rounded-lg p-4">
@@ -114,19 +114,19 @@ css: windicss
 # Pembagian Data Latih dan Data Uji
 <div class="grid grid-cols-2 gap-4">
     <div class="text-center">
-        <h2>50%</h2>
+        <h2>60%</h2>
         <h3>Data Latih</h3>
     </div>
     <div class="text-center">
-        <h2>50%</h2>
+        <h2>40%</h2>
         <h3>Data Uji</h3>
     </div>
 </div>
 ---
 layout: center
 ---
-<h1 class="text-center">Kenapa 50:50 ?</h1>
-<p>Setelah Melakukan Pengecekan dengan Cross Validation Score, didapatkan hasil bahwa data latih dan data uji dengan perbandingan 50:50 mempunyai skor yang lebih tinggi dibanding test size lainnya.</p>
+<h1 class="text-center">Kenapa 60:40 ?</h1>
+<p class="text-center">Setelah Melakukan Pengecekan dengan Cross Validation Score, didapatkan hasil dari train test '0,2','0,3','0,4','0,5' itu hasilnya mirip dan harus dicek saat testing hasil metrik skor.</p>
 ---
 layout: fact
 ---
@@ -413,14 +413,16 @@ layout: center
 ---
 # Kenapa Elbow Point?
 Elbow Point dipilih, bukannya menggunakan metode lain (misalnya: Silhouette method, Gap statistic, Average silhouette width method) adalah karena Elbow Point salah satu metode yang paling umum digunakan untuk menentukan jumlah kelompok yang optimal dalam k-means clustering. Ada beberapa alasan mengapa elbow point sering dipilih dibandingkan dengan metode lainnya, yaitu:
-1. Mudah dipahami
-2. Interpretasi yang intuitif
-3. Konsistensi
+- Mudah dipahami
+- Interpretasi yang intuitif
+- Konsistensi
 ---
 layout: center
 ---
-# Hasil Jumlah Kluster Optimal
-![](/elbow-point.png)
+<h1 class="text-center">Hasil Jumlah Kluster Optimal</h1>
+<p class="text-center">Hasil Elbow Point ada di titik 7, yang berarti jumlah kluster optimal adalah 7.</p>
+<img src="/elbow-point.png" width="400" class="mx-auto rounded">
+
 ---
 layout: center
 ---
@@ -428,7 +430,7 @@ layout: center
 
 <p class="text-center">Setelah mendapatkan jumlah kluster optimal, selanjutnya kami melakukan klusterisasi data dengan menggunakan metode k-means clustering. Berikut adalah hasil klusterisasi data yang kami lakukan:</p>
 
-<img src="/heatmap.png" width="700" class="mx-auto">
+<img src="/heatmap.png" width="700" class="mx-auto rounded">
 ---
 layout: intro-image-right
 image: '/process.jpg'
@@ -460,14 +462,14 @@ layout: center
 Cross Validation Score adalah salah satu metode yang digunakan untuk menentukan kinerja model pada data yang belum dilihat. Dalam konteks mencari split test yang paling optimal, Cross Validation Score dapat digunakan untuk mengevaluasi performa model pada berbagai split test yang berbeda dan memilih split test yang memberikan skor evaluasi yang paling optimal.
 
 Ada beberapa alasan mengapa Cross Validation Score sering digunakan untuk mencari split test yang paling optimal, yaitu:
-1. Mencegah overfitting
-2. Meminimalkan bias
-3. Memperoleh skor evaluasi yang stabil
+- Mencegah overfitting
+- Meminimalkan bias
+- Memperoleh skor evaluasi yang stabil
 ---
 layout: fact
 ---
-# 50:50
-Split Test dan Train yang Paling Baik
+# 60:40
+Split Train dan Test yang Paling Baik
 ---
 layout: center
 ---
@@ -485,6 +487,84 @@ Average Cross-Validation Score: 0.919173360999545
 Test Size: 0.5
 Average Cross-Validation Score: 0.9195213163799553
 ---
+layout: center
+---
+# Tapi, kan Hasil Test Size Terbaik ada di 0.5?
+
+Tidak selalu begitu, saudaraku sekalian. Kalau mengamati hasil skor metrik. Kami mendapatkan kesimpulan bahwa split test terbaik adalah 60:40, karena memiliki skor metrik yang lebih baik dibandingkan dengan split test lainnya.
+---
+layout: center
+---
+<h1 class="text-center">Hasil Skor Metrik</h1>
+<table>
+  <thead>
+    <tr>
+      <th scope="col">
+        Split Test
+      </th>
+      <th scope="col">
+        Accuracy
+      </th>
+      <th scope="col">
+        Precision
+      </th>
+      <th scope="col">
+        Recall
+      </th>
+      <th scope="col">
+        F1 Score
+      </th>
+      <th scope="col">
+        MSE
+      </th>
+      <th scope="col">
+        RMSE
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>80:20</td>
+      <td>91,95%</td>
+      <td>48,81%</td>
+      <td>0,83%</td>
+      <td>1,63%</td>
+      <td>8,05%</td>
+      <td>28,37%</td>
+    </tr>
+    <tr>
+      <td>70:30</td>
+      <td>91,96%</td>
+      <td>47,01%</td>
+      <td>0,74%</td>
+      <td>1,46%</td>
+      <td>8,04%</td>
+      <td>28,36%</td>
+    </tr>
+    <tr>
+      <td>60:40</td>
+      <td>91,96%</td>
+      <td>49,71%</td>
+      <td>0,87%</td>
+      <td>1,71%</td>
+      <td>8,04%</td>
+      <td>28,35%</td>
+    </tr>
+    <tr>
+      <td>50:50</td>
+      <td>91,92%</td>
+      <td>50,48%</td>
+      <td>0,85%</td>
+      <td>1,68%</td>
+      <td>8,08%</td>
+      <td>28,43%</td>
+    </tr>
+  </tbody>
+</table>
+
+<p v-click class="text-center">Hasil Skor Metrik Terbaik ada Split Test 60:40</p>
+
+---
 layout: statement
 ---
 # Mulai Klasifikasi Data...
@@ -493,7 +573,7 @@ layout: center
 ---
 # Koding Klasifikasi Data
 
-```python
+```python {all|2|5|8|all}
 # Membangun model Random Forest
 rf_model = RandomForestClassifier(n_estimators=100, random_state=42)
 
@@ -615,6 +695,8 @@ layout: center
 # Kesimpulan dari Klasifikasi Data
 
 Model memiliki akurasi yang tinggi (91.92%), tetapi presisi, recall, dan F1-Scorenya relatif rendah. Hal ini menunjukkan bahwa model cenderung menghasilkan banyak false positive dan false negative. MSE dan RMSE menunjukkan tingkat kesalahan rata-rata dalam prediksi nilai sebenarnya. Semakin rendah nilai MSE dan RMSE, semakin baik model dalam melakukan prediksi.
+
+Berdasarkan hasil evaluasi tersebut, dapat disimpulkan bahwa meskipun akurasinya cukup tinggi, namun model masih memiliki performa yang buruk dalam memprediksi data, terutama dalam hal presisi dan recall. Oleh karena itu, model perlu ditingkatkan performanya agar dapat memberikan hasil prediksi yang lebih baik.
 ---
 layout: statement
 ---
@@ -634,7 +716,10 @@ layout: center
 ---
 layout: statement
 ---
-# Tapi, Hasilnya Tetap Sama Bahkan Lebih Rendah :(
+# Tapi, Hasilnya Tetap Sama Bahkan Lebih Rendah
+
+<h1 class="mx-auto animate-bounce"><line-md-emoji-frown-twotone /></h1>
+
 ---
 layout: statement
 ---
@@ -668,12 +753,16 @@ layout: center
 ---
 layout: center
 ---
+<h1 class="text-center mb-6"><line-md-coffee-half-empty-twotone-loop /></h1>
+
 # Apakah Ada yang ingin ditanyakan?
 ---
 layout: center
 ---
+<h1 class="text-center mb-6"><line-md-moon-alt-loop /></h1>
+
 # Terima Kasih !
 
-```
+```bash
 $ sudo shutdown -r
 ```

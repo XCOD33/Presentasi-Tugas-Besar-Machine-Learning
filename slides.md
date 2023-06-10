@@ -468,7 +468,7 @@ Ada beberapa alasan mengapa Cross Validation Score sering digunakan untuk mencar
 ---
 layout: fact
 ---
-# 60:40
+# 50:50
 Split Train dan Test yang Paling Baik
 ---
 layout: center
@@ -486,6 +486,10 @@ Average Cross-Validation Score: 0.919173360999545
 
 Test Size: 0.5
 Average Cross-Validation Score: 0.9195213163799553
+---
+layout: center
+---
+<h1 class="text-center">Kami Tidak Langsung Memakai Test Size Paling Tinggi Tersebut</h1>
 ---
 layout: center
 ---
@@ -562,7 +566,7 @@ layout: center
   </tbody>
 </table>
 
-<p v-click class="text-center">Hasil Skor Metrik Terbaik ada Split Test 60:40</p>
+<p v-click class="text-center">Hasil Skor Metrik Terbaik ada di Split Test 60:40</p>
 
 ---
 layout: statement
@@ -591,7 +595,7 @@ layout: statement
 layout: center
 ---
 <h1>Hasil Klasifikasi Data</h1>
-<table>
+<table v-click="1">
   <thead>
     <tr>
       <th scope="col">Klasifikasi</th>
@@ -599,33 +603,33 @@ layout: center
     </tr>
   </thead>
   <tbody>
-    <tr>
+    <tr v-click="2">
       <td>Accuracy</td>
-      <td>91,9%</td>
+      <td>91,96%</td>
     </tr>
-    <tr>
+    <tr v-click="3">
       <td>Precision</td>
-      <td>50,4%</td>
+      <td>49,71%</td>
     </tr>
-    <tr>
+    <tr v-click="4">
       <td>Recall</td>
-      <td>0,8%</td>
+      <td>0,87%</td>
     </tr>
-    <tr>
+    <tr v-click="5">
       <td>F1 Score</td>
-      <td>1,6%</td>
+      <td>1,71%</td>
     </tr>
-    <tr>
+    <tr v-click="6">
       <td>Confussion Matrix</td>
-      <td>[141220, 104, 12326, 106]</td>
+      <td>[113032, 87, 9800, 86]</td>
     </tr>
-    <tr>
+    <tr v-click="7">
       <td>MSE</td>
-      <td>8%</td>
+      <td>8, 04%</td>
     </tr>
-    <tr>
+    <tr v-click="8">
       <td>RMSE</td>
-      <td>28,4%</td>
+      <td>28,35%</td>
     </tr>
   </tbody>
 </table>
@@ -637,7 +641,7 @@ layout: statement
 layout: center
 ---
 <h1>Arti Tiap Statistik Metrik:</h1>
-<table>
+<table class="text-sm">
   <thead>
     <tr>
       <th scope="col">Metrik</th>
@@ -646,20 +650,20 @@ layout: center
   </thead>
   <tbody>
     <tr>
-      <td>Accuracy : 91,9%</td>
-      <td>Akurasi mengukur seberapa baik model dapat mengklasifikasikan data dengan benar secara keseluruhan. Dalam hal ini, model memiliki akurasi sebesar 91.92%, yang berarti sekitar 91.92% dari data diklasifikasikan dengan benar.</td>
+      <td>Accuracy</td>
+      <td>Akurasi (Accuracy) sebesar 91.96% menunjukkan proporsi data yang diprediksi benar oleh model pada seluruh data uji. Semakin tinggi nilai akurasi, semakin baik performa model.</td>
     </tr>
     <tr>
-      <td>Precision : 50,4%</td>
-      <td>Presisi mengukur seberapa baik model dapat mengidentifikasi secara akurat kasus positif dari semua hasil yang diklasifikasikan sebagai positif. Dalam hal ini, model memiliki presisi sebesar 50.48%, yang berarti dari semua yang diprediksi sebagai positif, sekitar 50.48% adalah benar-benar kasus positif.</td>
+      <td>Precision</td>
+      <td>Presisi (Precision) sebesar 49.71% menggambarkan proporsi data positif yang benar-benar positif dari seluruh data yang diprediksi positif oleh model. Semakin tinggi nilai presisi, semakin sedikit data negatif yang salah diklasifikasikan sebagai data positif.</td>
     </tr>
     <tr>
-      <td>Recall : 0,8%</td>
-      <td>Recall (juga dikenal sebagai sensitivitas) mengukur seberapa baik model dapat mengidentifikasi secara akurat kasus positif dari semua kasus yang sebenarnya positif. Dalam hal ini, model memiliki recall sebesar 0.85%, yang berarti sekitar 0.85% dari semua kasus positif berhasil diidentifikasi oleh model.</td>
+      <td>Recall</td>
+      <td>Recall (Sensitivitas) sebesar 0.87% menggambarkan proporsi data positif yang benar-benar positif yang berhasil diidentifikasi oleh model dari seluruh data yang sebenarnya positif. Semakin tinggi nilai recall, semakin sedikit data positif yang salah diklasifikasikan sebagai data negatif.</td>
     </tr>
     <tr>
-      <td>F1 Score : 1,6%</td>
-      <td>F1-Score adalah rata-rata harmonik antara presisi dan recall. Ini memberikan ukuran yang seimbang antara presisi dan recall. Dalam hal ini, model memiliki F1-Score sebesar 1.68%.</td>
+      <td>F1 Score</td>
+      <td>F1-Score sebesar 1.71% merupakan nilai rata-rata harmonik antara presisi dan recall. Semakin tinggi nilai F1-Score, semakin baik performa model dalam mengklasifikasikan data.</td>
     </tr>
   </tbody>
 </table>
@@ -667,7 +671,7 @@ layout: center
 layout: center
 ---
 <h1>Lanjutan...</h1>
-<table>
+<table class="text-sm">
   <thead>
     <tr>
       <th scope="col">Metrik</th>
@@ -677,15 +681,15 @@ layout: center
   <tbody>
     <tr>
       <td>Confussion Matrix</td>
-      <td>Confusion matrix menunjukkan jumlah data yang diklasifikasikan dengan benar atau salah dalam bentuk matriks. Pada kasus ini, terdapat 141220 data yang diklasifikasikan dengan benar sebagai negatif (true negative), 104 data yang salah diklasifikasikan sebagai negatif (false negative), 12326 data yang salah diklasifikasikan sebagai positif (false positive), dan 106 data yang diklasifikasikan dengan benar sebagai positif (true positive).</td>
+      <td>Confusion Matrix adalah tabel dua dimensi yang menunjukkan jumlah data yang diklasifikasikan dengan benar atau salah oleh model. Diagonal utama menunjukkan jumlah data yang diklasifikasikan dengan benar, sedangkan diagonal lainnya menunjukkan jumlah data yang salah diklasifikasikan.</td>
     </tr>
     <tr>
-      <td>MSE : 8,0%</td>
-      <td>Mean Squared Error (MSE) mengukur rata-rata dari kuadrat perbedaan antara nilai prediksi dan nilai sebenarnya. Dalam hal ini, MSE memiliki nilai sebesar 8.08%.</td>
+      <td>MSE</td>
+      <td>MSE (Mean Squared Error) sebesar 8.04% menunjukkan rata-rata kuadrat perbedaan antara prediksi model dan nilai sebenarnya pada seluruh data uji.</td>
     </tr>
     <tr>
-      <td>RMSE : 28,4%</td>
-      <td>Root Mean Squared Error (RMSE) adalah akar kuadrat dari MSE. RMSE memberikan ukuran kesalahan rata-rata dalam satuan asli variabel target. Dalam hal ini, RMSE memiliki nilai sebesar 28.43%.</td>
+      <td>RMSE</td>
+      <td>RMSE (Root Mean Squared Error) sebesar 28.35% adalah akar kuadrat dari MSE, yang menunjukkan besarnya kesalahan prediksi model pada seluruh data uji.</td>
     </tr>
   </tbody>
 </table>
@@ -694,13 +698,11 @@ layout: center
 ---
 # Kesimpulan dari Klasifikasi Data
 
-Model memiliki akurasi yang tinggi (91.92%), tetapi presisi, recall, dan F1-Scorenya relatif rendah. Hal ini menunjukkan bahwa model cenderung menghasilkan banyak false positive dan false negative. MSE dan RMSE menunjukkan tingkat kesalahan rata-rata dalam prediksi nilai sebenarnya. Semakin rendah nilai MSE dan RMSE, semakin baik model dalam melakukan prediksi.
-
-Berdasarkan hasil evaluasi tersebut, dapat disimpulkan bahwa meskipun akurasinya cukup tinggi, namun model masih memiliki performa yang buruk dalam memprediksi data, terutama dalam hal presisi dan recall. Oleh karena itu, model perlu ditingkatkan performanya agar dapat memberikan hasil prediksi yang lebih baik.
+Dari hasil statistik tersebut, nilai akurasi yang mencapai 91.96% menunjukkan performa model yang cukup baik dalam mengklasifikasikan data. Namun, nilai presisi dan recall yang rendah menunjukkan model masih memiliki kesulitan dalam mengidentifikasi data positif dengan benar. Oleh karena itu, perlu dilakukan evaluasi lebih lanjut dan perbaikan pada model untuk meningkatkan performanya.
 ---
-layout: statement
+layout: center
 ---
-# Selanjutnya apa? Apakah Kami Tidak Mengupayakan Agar Lebih Baik?
+<h1 class="text-center">Selanjutnya apa? Apakah Kami Tidak Mengupayakan Agar Lebih Baik?</h1>
 ---
 layout: statement
 ---

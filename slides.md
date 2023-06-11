@@ -756,7 +756,7 @@ Dengan menggunakan metode yang tepat dan pemilihan split test yang optimal, kita
 layout: center
 ---
 # Kontribusi di Proyek Kami
-<img src="https://chart.googleapis.com/chart?cht=qr&chs=400x400&chl=https://www.kaggle.com/code/ricoaditya28/tugas-besar-ml/edit/run/132831326" width="400" class="mx-auto">
+<img src="https://chart.googleapis.com/chart?cht=qr&chs=400x400&chl=https://colab.research.google.com/drive/1sIMlZOQwZn6-pjGBWSPA-7BMgVhO7k9E?usp=sharing" width="400" class="mx-auto">
 ---
 layout: center
 ---

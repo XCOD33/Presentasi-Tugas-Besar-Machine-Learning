@@ -28,21 +28,21 @@ transition: slide-left
 ---
 <h2><line-md-reddit-loop /> Anggota Kelompok</h2>
 <div class="mt-6 grid grid-cols-3 gap-4">
-  <div class="col-span-1">
+  <div v-click class="col-span-1 cursor-pointer hover:transform hover:scale-105 transition duration-500">
     <div class="bg-white shadow-lg rounded-lg p-4">
       <img src="/rico.jpg" alt="Foto Profil" class="w-32 h-32 rounded-full mx-auto mb-4">
       <h2 class="text-xl font-semibold text-gray-800 text-center">M. Rico Aditya P.</h2>
       <p class="text-gray-800 text-center text-sm m-0 p-0">5210411055</p>
     </div>
   </div>
-  <div class="col-span-1">
+  <div v-click class="col-span-1 cursor-pointer hover:transform hover:scale-105 transition duration-500">
     <div class="bg-white shadow-lg rounded-lg p-4">
       <img src="/nunuk.jpg" alt="Foto Profil" class="w-32 h-32 rounded-full mx-auto mb-4">
       <h2 class="text-xl font-semibold text-gray-800 text-center">Nugrahman Reski P.</h2>
       <p class="text-gray-800 text-center text-sm m-0 p-0">5210411095</p>
     </div>
   </div>
-  <div class="col-span-1">
+  <div v-click class="col-span-1 cursor-pointer hover:transform hover:scale-105 transition duration-500">
     <div class="bg-white shadow-lg rounded-lg p-4">
       <img src="/ivan.jpg" alt="Foto Profil" class="w-32 h-32 rounded-full mx-auto mb-4">
       <h2 class="text-xl font-semibold text-gray-800 text-center">Ivan Bhagaskara K.</h2>
@@ -50,6 +50,16 @@ transition: slide-left
     </div>
   </div>
 </div>
+
+<style>
+.slidev-vclick-target {
+  transition: all 500ms ease;
+}
+
+.slidev-vclick-hidden {
+  transform: scale(0);
+}
+</style>
 ---
 layout: quote
 ---
